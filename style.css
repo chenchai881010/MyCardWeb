@@ -37,29 +37,30 @@ body{
 .Position{
     height: 10%;
     background-color: rgb(117, 112, 79);
-    font-size:medium ;   
+    font-size:2.5vw;   
 }
+.Position p{ margin: auto;}
 .Name{
     height: 35%;
     background-color: rgb(176, 211, 212);
     text-align: center;
-    font-size:95px;
+    font-size: 10vw;
 }
 .Expertise{
     height: 20%;
     background-color: cadetblue;
-    font-size:small;
+    font-size:1.5vw;
 }
 .Education{
     height: 20%;
     background-color: rgb(155, 111, 155);
     text-align: right;
-    font-size:x-small;
+    font-size:1.4vw;
 }
 .Contact{
     height: 15%;
     background-color: rgb(131, 201, 128);
-    font-size:small;
+    font-size:2vw;
 }
 .down { 
     border-radius: 0 0 5px 5px;
