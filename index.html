@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <title>陳嘉晉_個人名片</title>
 </head>
 <body>
-  <div>
-    <p>"陳嘉晉"</p>
-    
+  <div class="card">
+    <div class="front  w3-round-large"> 
+        <p>個人簡歷</p>
+    </div>
+    <div class="back  w3-round-large">
+         <p>個人作品</p>
+    </div>
   </div>  
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".front").click(function(){
+    $(".front").css("transform" ,"rotateY(180deg)");
+    $(".back").css("transform" ,"rotateY(360deg)");
+  });
+  $(".back").click(function(){
+    $(".front").css("transform" ,"rotateY(0deg)");
+    $(".back").css("transform" ,"rotateY(180deg)");
+  });
+});
+</script>
 </html>
