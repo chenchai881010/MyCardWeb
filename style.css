@@ -4,6 +4,16 @@ body{
   justify-content: center;
   background-color: bisque;
 }
+.ch_point
+{
+position: fixed;
+   height:100vh; 
+   width: 2%;
+   right: 0%;
+   color: darkgray;
+}
+.ch_point i{ position: fixed; right:0.1vh; font-size: 9vh; font-weight: bolder; margin-top: 45vh;cursor: pointer;}
+.ch_point :hover{ background-color: rgba(41, 41, 41, 0.089);}
 .card {/* 10:17 */
   height:100vh;
   aspect-ratio: 17/10;
@@ -24,12 +34,34 @@ body{
     background-repeat: no-repeat;
   background-position-y: 65%;
 }
+.frontFlip{transform: rotateY(180deg);}
 .top {
     border-radius: 10px 10px 0 0;
     background-image: url("./image/top.png");
     background-size: 180vh 7.5vh ;
     height: 8%; 
 
+}
+.QRcode{
+    position: fixed;
+    width: 29.99%;
+    height: 89%;
+    cursor: pointer;
+}
+.QRcode i{visibility: hidden; }
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+.QRcode:hover .tooltiptext{
+    visibility: visible;
 }
 .mycontent { 
     height: 88%;
@@ -42,20 +74,26 @@ body{
     left: 30%;
 }
 .Position{
+    background-image: url("./image/bottom.png");
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: 140vh 1.3vh;
     height: 10%;
     font-size:4.5vh;   
 }
-.Position p{ margin: auto;}
+.Position p{margin: 2vh;}
+.Position p span{cursor: pointer; }
 .Name{
     height: 35%;
     text-align: center;
     font-size: 18vh;
+    cursor: pointer;
 }
 .Expertise{
     height: 20%;
     font-size:2.7vh;
+     margin-left: 2.5vh;
 }
-.Expertise{ margin-left: 2.5vh;}
 .Education{
     height: 20%;
     text-align: right;
@@ -84,19 +122,38 @@ body{
   background: rgb(248, 235, 215);
   transform: rotateY(180deg);
 }
+.backFlip{transform: rotateY(360deg);}
 @media screen and (max-width:480px){
     .card{ 
         width: 100%;
         height: auto;
         aspect-ratio: 9/16;
     }
+    .front { 
+    background-size: 100%;
+    }
     .mycontent { 
+    background-image: none;
+    background-color: rgba(240, 248, 255, 0);
     width: 100%;
     left: 0%;
     }
+    .QRcode{
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 6vh;
+    
+    }
+    .QRcode i{
+        visibility: visible;
+        font-size: xx-large;
+        padding: 2vh; 
+        color: rgb(66, 67, 68);
+    }
     .Position{
     font-size:5vw; 
-    text-align: right; 
+    text-align: left; 
     }
     .Position p{ margin-top: 5%;}
     .Name{
@@ -111,11 +168,14 @@ body{
          height: 15%;
          font-size: 3vw;
          font-weight:500;
+          margin-left: auto;
+         background-color: aliceblue;
     }
-    .Expertise p{padding: 5%;}
+    .Expertise p{padding: 5%; }
     .Education{
         height: 15%;
         font-size: 3vw;
+        background-color: bisque;
     }
     .E_history{
         text-align: left; 

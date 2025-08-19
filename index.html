@@ -9,12 +9,14 @@
     <title>陳嘉晉_個人名片</title>
 </head>
 <body>
+  
   <div class="card">
     <div class="front w3-round-large"> 
         <div class="top"></div>
+        <div class="QRcode"><i class="material-icons">share</i><span class="tooltiptext">Show QRcode</span></div>
         <div class="mycontent">
             <div class="Position w3-container">
-                <p>職位：Unity工程師</p>
+                <p>職位：<span>Unity工程師</span></p>
             </div>
             <div class="Name w3-container">
                 陳 嘉 晉
@@ -49,18 +51,16 @@
          <p>個人作品</p>
     </div>
   </div>  
+  <div class="ch_point"><i class="material-icons">chevron_right</i></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $(".front").click(function(){
-    $(".front").css("transform" ,"rotateY(180deg)");
-    $(".back").css("transform" ,"rotateY(360deg)");
+  $(".ch_point i").click(function(){
+    $(".front").toggleClass("frontFlip");
+    $(".back").toggleClass("backFlip");
   });
-  $(".back").click(function(){
-    $(".front").css("transform" ,"rotateY(0deg)");
-    $(".back").css("transform" ,"rotateY(180deg)");
-  });
+
 });
 </script>
 </html>
