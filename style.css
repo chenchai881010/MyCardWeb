@@ -1,12 +1,12 @@
-
+body::-webkit-scrollbar{display: none;}
 body{
   display: flex;
   justify-content: center;
   background-color: bisque;
 }
 .card {/* 10:17 */
-  width: 95%;
-  aspect-ratio: 16/9;
+  height:100vh;
+  aspect-ratio: 17/10;
   perspective: 1000px; 
   position: relative;
 }
@@ -37,31 +37,35 @@ body{
 .Position{
     height: 10%;
     background-color: rgb(117, 112, 79);
-    font-size:2.5vw;   
+    font-size:4.5vh;   
 }
 .Position p{ margin: auto;}
 .Name{
     height: 35%;
     background-color: rgb(176, 211, 212);
     text-align: center;
-    font-size: 10vw;
+    font-size: 18vh;
 }
 .Expertise{
     height: 20%;
     background-color: cadetblue;
-    font-size:1.5vw;
+    font-size:2.7vh;
 }
 .Education{
     height: 20%;
     background-color: rgb(155, 111, 155);
     text-align: right;
-    font-size:1.4vw;
+    font-size:2.7vh;
 }
+.Education p{margin: auto; }
+.E_history{ text-align: left; width: 50%;position: fixed; left: 65%;}
 .Contact{
     height: 15%;
     background-color: rgb(131, 201, 128);
-    font-size:2vw;
+    font-size:3vh;
+    text-align: center;
 }
+.Contact i{font-size: 3vh;}
 .down { 
     border-radius: 0 0 5px 5px;
     height: 4%; 
@@ -76,11 +80,47 @@ body{
   transform: rotateY(180deg);
 }
 @media screen and (max-width:480px){
-    .card{
+    .card{ 
+        width: 100%;
+        height: auto;
         aspect-ratio: 9/16;
     }
     .mycontent { 
     width: 100%;
     left: 0%;
     }
+    .Position{
+    font-size:5vw; 
+    text-align: right; 
+    }
+    .Position p{ margin-top: 5%;}
+    .Name{
+        writing-mode: vertical-rl;
+        width: 65%;
+        height: 50%;
+        font-size: 15vw;
+        background-color: rgba(0, 0, 0, 0);
+        font-weight:bolder;
+    }
+    .Expertise{
+         height: 15%;
+         font-size: 3vw;
+         font-weight:500;
+    }
+    .Expertise p{padding: 5%;}
+    .Education{
+        height: 15%;
+        font-size: 3vw;
+    }
+    .E_history{
+        text-align: left; 
+        width: 100%;position: fixed; 
+        left: 0%;
+        padding-left: 15%;
+    }
+    .Contact{
+        height: 10%;
+        font-size: 3vw;
+    }
+    .Contact i{font-size: 3vw;}
 }
