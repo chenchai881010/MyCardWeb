@@ -119,11 +119,13 @@ position: fixed;
     
 }
 .back {
-  background: rgb(248, 235, 215);
+ background-image: url("./image/back.png");
+ background-position: 50%;
+ background-size: cover;
   transform: rotateY(180deg);
 }
 .backFlip{transform: rotateY(360deg);}
-@media screen and (max-width:480px){
+@media (max-width:480px){
     .card{ 
         width: 100%;
         height: auto;
