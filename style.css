@@ -6,13 +6,13 @@ body{
 }
 .ch_point
 {
-position: fixed;
-   height:100vh; 
-   width: 2%;
+position: fixed; 
+   width: fit-content;
    right: 0%;
    color: darkgray;
+   margin: auto;
 }
-.ch_point i{ position: fixed; right:0.1vh; font-size: 9vh; font-weight: bolder; margin-top: 45vh;cursor: pointer;}
+.ch_point i{ font-size: 60px; font-weight: bolder; margin-top: 45vh;cursor: pointer;}
 .ch_point :hover{ background-color: rgba(41, 41, 41, 0.089);}
 .card {/* 10:17 */
   height:100vh;
@@ -82,7 +82,7 @@ position: fixed;
     font-size:4.5vh;   
 }
 .Position p{margin: 2vh;}
-.Position p span{cursor: pointer; }
+.Position p span{cursor: pointer; background-color: coral; }
 .Name{
     height: 35%;
     text-align: center;
@@ -121,12 +121,17 @@ position: fixed;
 .back {
  background-image: url("./image/back.png");
  background-position: 50%;
- background-size: cover;
+ background-size:contain;
   transform: rotateY(180deg);
 }
 .backFlip{transform: rotateY(360deg);}
 @media (max-width:480px){
+    body{
+        background-color: rgb(247, 241, 234);
+    }
+    .ch_point i{ margin-right:-3vw;}
     .card{ 
+        margin-top: 5%;
         width: 100%;
         height: auto;
         aspect-ratio: 9/16;
@@ -157,12 +162,13 @@ position: fixed;
     font-size:5vw; 
     text-align: left; 
     }
-    .Position p{ margin-top: 5%;}
+    .Position p{ margin-top: 5%; background-color: #e8f08277;}
     .Name{
         writing-mode: vertical-rl;
-        width: 65%;
+        width: fit-content;
         height: 50%;
         font-size: 15vw;
+        margin-left: 30vw;
         background-color: rgba(0, 0, 0, 0);
         font-weight:bolder;
     }
