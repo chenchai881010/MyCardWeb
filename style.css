@@ -118,10 +118,57 @@ position: fixed;
     bottom: 0%;
     
 }
+#dialog{
+    background-color: coral;
+    color: #fff;
+    text-align: center;
+    border-radius: 50px;
+    width: 50%;
+    min-width: 330px;
+    aspect-ratio: 1/1;
+    max-height: 80%;
+    top: 10%;
+}
+#Introdution{
+    height: 80%;
+    aspect-ratio: 17/10;
+    background-image: url("./image/main_img.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: antiquewhite;
+    color: chocolate;
+    border-radius: 50px;
+    border-width: 5px;
+    border-style: solid solid dotted dotted  ;
+    margin-top: 5%;
+}
+#Introdution h3{color: #000000;font-weight: bolder;margin-left: 38%}
+#Introdution div{overflow: auto;
+     background-color: rgb(254, 255, 240); 
+     width: 60%;height: 80%;
+     margin-left: 10%;
+     color: #000000;
+     margin-left: 38%;
+     font-size: larger;
+     padding: 0% 2% 0% 2%;
+     text-align:start;
+    }
+#Introdution div p span{font-weight: 700;}
+#code{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#code img{
+    width: 70%;
+    min-width: 10vh;
+    aspect-ratio: 1/1;
+}
 .back {
- background-image: url("./image/back.png");
+ background-image: url("./image/back.svg");
  background-position: 50%;
- background-size:contain;
+ background-size: 100% 100%;
+ background-repeat: no-repeat;
   transform: rotateY(180deg);
 }
 .backFlip{transform: rotateY(360deg);}
@@ -196,4 +243,17 @@ position: fixed;
         font-size: 3vw;
     }
     .Contact i{font-size: 3vw;}
+    #Introdution{
+    width: 95%;
+    height: auto;
+    max-height: 500px;
+    top: 5%;
+    aspect-ratio: 10/17;
+    background-size: 100%;
+    }
+    #Introdution h3{width: 95%;margin-left: 2.5%;background-color: rgb(226, 136, 75);color: #ffffff;padding-left: 5%;}
+    #Introdution div{width: 95%; margin-left: 2.5%;padding: 3%; background-color: rgba(253, 253, 253, 0.795);color: #000000;font-size: medium;}
+    .back{
+        background-image: url("./image/back.png");
+    }
 }

@@ -53,14 +53,50 @@
   </div>  
   <div class="ch_point"><i class="material-icons">chevron_right</i></div>
 </body>
+  <dialog id="dialog"><h3>本網站QRcode：</h3><div id="code"></div></dialog>
+  <dialog id="Introdution">
+    <h3 style="border-bottom: dashed rgb(236, 152, 83);" >自我介紹</h3>
+    <div>
+      <p>由於本身對<span>程式編寫與遊戲開發有興趣</span>，在高中時期選擇有程式編寫相關的科系來學習程式編程，同時考取了<span>網頁設計丙級 和 電腦硬體裝修乙級 證照</span>，還以「虛擬實境(VR)的探討與應用」為題目參加全國高級中等學校小論文寫作比賽榮獲甲等。</p>
+      <p>到了大學時期，正式進入系統開發學習，在大三、大四期間也<span>自主選修系上提供的就業學程在網頁設計和遊戲開發上增進自身實力</span>，我自身以<span>Unity 為主要開發軟體</span> ，在小組中都擔任主程式開發，也有因課程需求，獨自開發過小遊戲，在期間開發過<span>2D遊戲、3D遊戲、VR遊戲 和 Android導覽系統</span>，其中開發的2D遊戲—畢業專題「宅怨」在<span>2022放視大賞-遊戲類-PC遊戲組 和 2022新一代中參與展出</span>。</p>
+      <p>研究所期間<span>參與VR專案「愛護環境之VR互動學習系統」開發</span>，配合國小六年級課程內容，製作VR互動遊戲。為完成畢業論文<span>「應用ChatGPT於行動裝置助理系統開發—以AR雙語學習遊戲為例」</span>，整合了ChatGPT生成之文本、語音識別系統以及AR foundation ，開發出AR雙語學習遊戲，透過語音互動的方式在現實環境中與虛擬角色互動，並記錄互動狀況來給予評分。在碩士畢業前，接了兩個短期委託，分別是<span>AI美術學習網站</span>，整合AI模型至網站中，協助教師給學生作品評分，和<span>機械手臂程式檢定學習系統</span>，協助學生學習機械手臂程式。</p>
+    </div>
+  </dialog>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
+  const currentUrl = window.location.href;
+  new QRCode(document.getElementById("code"),{
+    text:currentUrl,
+    width:200,
+    heihgt:200
+  });
 $(document).ready(function(){
   $(".ch_point i").click(function(){
     $(".front").toggleClass("frontFlip");
     $(".back").toggleClass("backFlip");
+    //alert("作品模式："+$(".Position span").text());
   });
-
+  $(".QRcode").click(function() {
+    $("#dialog").slideDown();
+  });
+    $("#dialog").click(function() {
+    $("#dialog").slideUp();
+  });
+  $(".Position span").click(function(){
+    if ( $(".Position span").text()=="Unity工程師") {
+      $(".Position span").text("前端工程師");
+    }else
+    {
+      $(".Position span").text("Unity工程師");
+    }
+  });
+    $(".Name").click(function() {
+    $("#Introdution").fadeIn("slow");
+  });
+    $("#Introdution").click(function() {
+    $("#Introdution").fadeOut("slow");
+  });
 });
 </script>
 </html>
