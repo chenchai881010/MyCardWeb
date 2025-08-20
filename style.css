@@ -158,11 +158,14 @@ position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 75%;
 }
 #code img{
-    width: 70%;
-    min-width: 10vh;
+    height: 70%;
     aspect-ratio: 1/1;
+    border-style:dashed;
+    border-color: bisque;
+    border-width: 5px;
 }
 .back {
  background-image: url("./image/back.svg");
