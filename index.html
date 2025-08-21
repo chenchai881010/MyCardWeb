@@ -23,7 +23,7 @@
             </div>
             <div class="Expertise w3-container">
                 <p>
-                專    長：Unity。C#。C++。VR/AR<br>
+                專    長：<span id="telent">Unity。C#。C++。VR/AR。</span><br>
                 輔助能力：3D建模。3D動畫。攝影。影片剪輯。音效製作<br>
                 </p>
             </div>
@@ -48,7 +48,25 @@
         <div class="down"></div>
     </div>
     <div class="back  w3-round-large">
-         <p>個人作品</p>
+         <div class="Myitem">
+          <div class="workname">
+            <div class="nowWork">Link 1</div>
+            <div class="dropdown">
+              <p >Link 1</p>
+              <p >Link 2</p>
+              <p >Link 3</p>
+              <p >Link 4</p>
+              <p >Link 5</p>
+              <p >Link 6</p>
+          </div>
+          </div>
+        </div>
+         <div class="MyWork">
+          <div class="int_text">123456</div>
+          <div class="int_img">123</div>
+         </div>
+         <img id="d01" src="./image/D01.png" alt="d01">
+         <img id="d02" src="./image/D02.png" alt="d02">
     </div>
   </div>  
   <div class="ch_point"><i class="material-icons">chevron_right</i></div>
@@ -75,27 +93,37 @@ $(document).ready(function(){
   $(".ch_point i").click(function(){
     $(".front").toggleClass("frontFlip");
     $(".back").toggleClass("backFlip");
+    //設定預設作品
     //alert("作品模式："+$(".Position span").text());
   });
   $(".QRcode").click(function() {
     $("#dialog").slideDown();
   });
-    $("#dialog").click(function() {
+  $("#dialog").click(function() {
     $("#dialog").slideUp();
   });
   $(".Position span").click(function(){
     if ( $(".Position span").text()=="Unity工程師") {
       $(".Position span").text("前端工程師");
+      $("#telent").text("Html。CSS。JavaScript。JQuery。Bootstrap。P5.js。MySQL。");
     }else
     {
       $(".Position span").text("Unity工程師");
+      $("#telent").text("Unity。C#。C++。VR/AR。");
     }
   });
-    $(".Name").click(function() {
+  $(".Name").click(function() {
     $("#Introdution").fadeIn("slow");
   });
-    $("#Introdution").click(function() {
+  $("#Introdution").click(function() {
     $("#Introdution").fadeOut("slow");
+  });
+  $(".workname").click(function(){
+    $(".dropdown").slideToggle("slow");
+  });
+  $(".dropdown p").click(function(){
+    let push = $(this).text();
+    $(".nowWork").text(push);
   });
 });
 </script>
