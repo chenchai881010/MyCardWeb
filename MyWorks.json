@@ -1,0 +1,26 @@
+[
+  {
+    "Unity工程師": [
+      {
+        "name": "AncientWeapon",
+        "Image": [
+          "./WorkIMG/AncientWeapon01.png",
+          "./WorkIMG/AncientWeapon02.png",
+          "./WorkIMG/AncientWeapon03.png"
+        ],
+        "introduction": "些魔物。",
+        "thinking": "樂趣。"
+      },
+      {
+        "name": "HIDE & SEEK",
+        "Image": [
+          "./WorkIMG/HIDE&SEEK01.png",
+          "./WorkIMG/HIDE&SEEK02.png",
+          "./WorkIMG/HIDE&SEEK03.png"
+        ],
+        "introduction": "遊戲種類",
+        "thinking": "我方便。"
+      }
+    ]
+  }
+]

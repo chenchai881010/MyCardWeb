@@ -63,7 +63,7 @@
         </div>
          <div class="MyWork">
           <div class="int_text">123456</div>
-          <div class="int_img">123</div>
+          <div class="int_img"><img src="./WorkIMG/aiART01.png" alt="main"></div>
          </div>
          <img id="d01" src="./image/D01.png" alt="d01">
          <img id="d02" src="./image/D02.png" alt="d02">
@@ -124,6 +124,9 @@ $(document).ready(function(){
   $(".dropdown p").click(function(){
     let push = $(this).text();
     $(".nowWork").text(push);
+  });
+  $.getJSON('MyWorks.json',function(data){
+    alert(data[0]["Unity工程師"][1].thinking);
   });
 });
 </script>
