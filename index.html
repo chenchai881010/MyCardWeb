@@ -125,8 +125,8 @@ $(document).ready(function(){
     let push = $(this).text();
     $(".nowWork").text(push);
   });
-  $.getJSON('MyWorks.json',function(data){
-    alert(data[0]["Unity工程師"][1].thinking);
+  $.getJSON('Works.json',function(data){
+    alert(data[0]["前端工程師"][1].name);
   });
 });
 </script>
