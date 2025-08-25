@@ -51,7 +51,7 @@
          <div class="Myitem">
           <div class="workname">
             <div class="nowWork">Link 1</div>
-            <div class="dropdown">
+            <div class="dropdown" style="z-index: 1;">
               <p >Link 1</p>
               <p >Link 2</p>
               <p >Link 3</p>
@@ -62,8 +62,19 @@
           </div>
         </div>
          <div class="MyWork">
-          <div class="int_text">123456</div>
-          <div class="int_img"><img src="./WorkIMG/aiART01.png" alt="main"></div>
+          <div class="int_text">
+            遊戲種類：2D 橫向動作遊戲<br>藉由鍵盤上的按鍵來控制角色的移動與攻擊並設法擊退迎來的魔物，攻擊與移動為同一按鍵，按下即可移動到魔物身上攻擊，因此角色會在畫面上的四條通道上來回戰鬥，每一關都有固定數量的魔物，當魔物被清除完後，就能通往下一關，左上角的魔物被清除完畢後就遊戲通關。<br>遊戲故事：<br>主角是一名靈器使，能操作寄宿在古代武器中的器靈。而他與他的器靈夥伴們在尋找古代武器的冒險旅途中遇到了突然出現的魔物遺跡-龍圖騰。從圖騰上的凹洞湧出大量的魔物，使得附近的村子造受到攻擊。為了守護這些無辜村民，主角討伐這些魔物。
+          </div>
+          <div class="int_img">
+            <img class="nowShow" src="./WorkIMG/aiART01.png" alt="main">
+            <img class="nowShow" src="./WorkIMG/aiART02.png" alt="main">
+            <img class="nowShow" src="./WorkIMG/aiART03.png" alt="main">
+            <div class="allimage">
+              <img class="artIMG" src="./WorkIMG/aiART01.png" alt="0">
+              <img class="artIMG" src="./WorkIMG/aiART02.png" alt="1">
+              <img class="artIMG" src="./WorkIMG/aiART03.png" alt="2">
+            </div>
+          </div>
          </div>
          <img id="d01" src="./image/D01.png" alt="d01">
          <img id="d02" src="./image/D02.png" alt="d02">
@@ -89,12 +100,28 @@
     width:200,
     heihgt:200
   });
+  var imgindex = 0;
+  playIMG();
+  function playIMG(){
+    let images =$(".artIMG");
+    let shows = $(".nowShow");
+    $(shows[imgindex-1]).hide();
+    $(images[imgindex-1]).removeClass('whiteBorder');
+    if(imgindex >= images.length){imgindex = 0;}
+    $(images[imgindex]).addClass('whiteBorder'); 
+    $(shows[imgindex]).slideDown("slow");
+    imgindex++;
+    setTimeout(playIMG, 5000);
+  }
 $(document).ready(function(){
   $(".ch_point i").click(function(){
     $(".front").toggleClass("frontFlip");
     $(".back").toggleClass("backFlip");
     //設定預設作品
     //alert("作品模式："+$(".Position span").text());
+     $.getJSON('Works.json',function(data){
+      //alert(data[0]["前端工程師"][1].name);
+      });
   });
   $(".QRcode").click(function() {
     $("#dialog").slideDown();
@@ -125,8 +152,15 @@ $(document).ready(function(){
     let push = $(this).text();
     $(".nowWork").text(push);
   });
-  $.getJSON('Works.json',function(data){
-    alert(data[0]["前端工程師"][1].name);
+  $(".artIMG").click(function(){
+    let shows = $(".nowShow");
+    let seles =$(".artIMG");
+    let m_alt =$(this).attr("alt");
+    seles.removeClass('whiteBorder');
+    imgindex = m_alt;
+    shows.hide();
+    $(shows[imgindex]).slideDown("slow");
+    $(this).addClass('whiteBorder');
   });
 });
 </script>
