@@ -82,7 +82,13 @@ position: fixed;
     font-size:4.5vh;   
 }
 .Position p{margin: 2vh;}
-.Position p span{cursor: pointer; background-color: coral; }
+.Position p span{
+    cursor: pointer; 
+    background-color: rgb(255, 223, 212); 
+    border-style: dashed;
+    border-color: #ff9900;
+    padding: 0% 1%;
+ }
 .Name{
     height: 35%;
     text-align: center;
@@ -185,7 +191,7 @@ position: fixed;
     background-color: #FFC000;
     width: 60%;
     height: fit-content;
-    font-size: 5vh;
+    font-size: 4vh;
     position: relative;
     display: inline-block;
     border-radius: 15px;
@@ -197,7 +203,7 @@ position: fixed;
     position: absolute;
     width: 90%;
     height: 25vh;
-    font-size: 3vh;
+    font-size: 2vh;
     background-color: beige;
     overflow-y:auto;
     display: none;
@@ -205,7 +211,7 @@ position: fixed;
 .dropdown p{
     width: 100%;
     height: auto;
-    padding: 2%;
+    padding: 2% 8% 2% 2%;
     margin: auto;
     cursor: pointer;
 }
@@ -231,6 +237,18 @@ position: fixed;
     overflow-y: auto;
     font-size: 3vh;
 }
+.int_text i{
+    background-color: rgba(253, 255, 156, 0.863); 
+    color: blue; 
+    text-align: right;
+    margin-left:80%; 
+    margin-top: 10%;
+    padding: 1%;
+    cursor: pointer;
+    border-style:dashed;
+    border-color: #ff7300;
+    border-radius: 20px;
+}
 .int_img{
      width: 35%;
      height: 40vh;
@@ -241,6 +259,7 @@ position: fixed;
     flex-direction: column;
     align-items: center;
     justify-content: end;
+    overflow: hidden;
 }
 .nowShow{
     width: 95%;
@@ -263,10 +282,12 @@ position: fixed;
     position:relative;
     bottom: 0;
 }
+.allimage img:hover{filter: brightness(1.5);}
 .whiteBorder{
     border-style: solid;
     border-color: aliceblue;
     border-width: 3px;
+    filter: brightness(1.5);
 }
 #d01{
     position: fixed;
@@ -278,6 +299,7 @@ position: fixed;
     position: fixed;
     width: 15%;
     top: 0;
+    z-index: 1;
 }
 @media (max-width:480px){
     body{
@@ -313,10 +335,10 @@ position: fixed;
         color: rgb(66, 67, 68);
     }
     .Position{
-    font-size:5vw; 
+    font-size:6vw; 
     text-align: left; 
     }
-    .Position p{ margin-top: 5%; background-color: #e8f08277;}
+    .Position p{ margin-top: 5%; background-color: #fdb666a2; }
     .Name{
         writing-mode: vertical-rl;
         width: fit-content;
@@ -370,7 +392,8 @@ position: fixed;
     .workname{
         margin-left: 5%;
         width: 90%;
-        font-size: 4vh;
+        padding: 2% 1%  ;
+        font-size: 120%;
     }
     .MyWork{
         height:80%;
@@ -384,6 +407,7 @@ position: fixed;
         position: fixed;
         font-size: larger;
     }
+    .int_text i{margin-left:60%;}
     .int_img{
         width: 100%;
         height: 30%;

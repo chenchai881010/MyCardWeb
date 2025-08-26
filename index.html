@@ -62,9 +62,13 @@
           </div>
         </div>
          <div class="MyWork">
-          <div class="int_text">
-            遊戲種類：2D 橫向動作遊戲<br>藉由鍵盤上的按鍵來控制角色的移動與攻擊並設法擊退迎來的魔物，攻擊與移動為同一按鍵，按下即可移動到魔物身上攻擊，因此角色會在畫面上的四條通道上來回戰鬥，每一關都有固定數量的魔物，當魔物被清除完後，就能通往下一關，左上角的魔物被清除完畢後就遊戲通關。<br>遊戲故事：<br>主角是一名靈器使，能操作寄宿在古代武器中的器靈。而他與他的器靈夥伴們在尋找古代武器的冒險旅途中遇到了突然出現的魔物遺跡-龍圖騰。從圖騰上的凹洞湧出大量的魔物，使得附近的村子造受到攻擊。為了守護這些無辜村民，主角討伐這些魔物。
+          <div class="int_text" style="display: none;">
+            <div>
+               遊戲種類：2D 橫向動作遊戲<br>藉由鍵盤上的按鍵來控制角色的移動與攻擊並設法擊退迎來的魔物，攻擊與移動為同一按鍵，按下即可移動到魔物身上攻擊，因此角色會在畫面上的四條通道上來回戰鬥，每一關都有固定數量的魔物，當魔物被清除完後，就能通往下一關，左上角的魔物被清除完畢後就遊戲通關。<br>遊戲故事：<br>主角是一名靈器使，能操作寄宿在古代武器中的器靈。而他與他的器靈夥伴們在尋找古代武器的冒險旅途中遇到了突然出現的魔物遺跡-龍圖騰。從圖騰上的凹洞湧出大量的魔物，使得附近的村子造受到攻擊。為了守護這些無辜村民，主角討伐這些魔物。
+            </div>
+           <i>創作心得</i>
           </div>
+
           <div class="int_img">
             <img class="nowShow" src="./WorkIMG/aiART01.png" alt="main">
             <img class="nowShow" src="./WorkIMG/aiART02.png" alt="main">
@@ -93,75 +97,5 @@
   </dialog>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-  const currentUrl = window.location.href;
-  new QRCode(document.getElementById("code"),{
-    text:currentUrl,
-    width:200,
-    heihgt:200
-  });
-  var imgindex = 0;
-  playIMG();
-  function playIMG(){
-    let images =$(".artIMG");
-    let shows = $(".nowShow");
-    $(shows[imgindex-1]).hide();
-    $(images[imgindex-1]).removeClass('whiteBorder');
-    if(imgindex >= images.length){imgindex = 0;}
-    $(images[imgindex]).addClass('whiteBorder'); 
-    $(shows[imgindex]).slideDown("slow");
-    imgindex++;
-    setTimeout(playIMG, 5000);
-  }
-$(document).ready(function(){
-  $(".ch_point i").click(function(){
-    $(".front").toggleClass("frontFlip");
-    $(".back").toggleClass("backFlip");
-    //設定預設作品
-    //alert("作品模式："+$(".Position span").text());
-     $.getJSON('Works.json',function(data){
-      //alert(data[0]["前端工程師"][1].name);
-      });
-  });
-  $(".QRcode").click(function() {
-    $("#dialog").slideDown();
-  });
-  $("#dialog").click(function() {
-    $("#dialog").slideUp();
-  });
-  $(".Position span").click(function(){
-    if ( $(".Position span").text()=="Unity工程師") {
-      $(".Position span").text("前端工程師");
-      $("#telent").text("Html。CSS。JavaScript。JQuery。Bootstrap。P5.js。MySQL。");
-    }else
-    {
-      $(".Position span").text("Unity工程師");
-      $("#telent").text("Unity。C#。C++。VR/AR。");
-    }
-  });
-  $(".Name").click(function() {
-    $("#Introdution").fadeIn("slow");
-  });
-  $("#Introdution").click(function() {
-    $("#Introdution").fadeOut("slow");
-  });
-  $(".workname").click(function(){
-    $(".dropdown").slideToggle("slow");
-  });
-  $(".dropdown p").click(function(){
-    let push = $(this).text();
-    $(".nowWork").text(push);
-  });
-  $(".artIMG").click(function(){
-    let shows = $(".nowShow");
-    let seles =$(".artIMG");
-    let m_alt =$(this).attr("alt");
-    seles.removeClass('whiteBorder');
-    imgindex = m_alt;
-    shows.hide();
-    $(shows[imgindex]).slideDown("slow");
-    $(this).addClass('whiteBorder');
-  });
-});
-</script>
+<script src="./jQuery.js"></script>
 </html>
